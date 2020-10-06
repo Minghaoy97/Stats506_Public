@@ -18,7 +18,7 @@ Yiyi Xu: https://github.com/yiyixu11/Stats506_public
 
 ### Week 1 - Shell scripting activity
 
-Repository link: http://github.com/Minghaoy97/Stats506_Public
+Repository link: http://github.com/Minghaoy97/Stats506_Public/activities/week1
 1. Prepare workspace
 2. Download RECS and extract columns by name
 3. Modify the previous script into an executable program
@@ -41,7 +41,7 @@ Jialun Li: https://github.com/CataphractLi/Stats506_public
 
 ### Week 4, 5 - Tidyverse
 
-Repository link: http://github.com/Minghaoy97/Stats506_Public
+Repository link: http://github.com/Minghaoy97/Stats506_Public/activities/week4
 
 1. git
 2. dplyr
