@@ -22,3 +22,5 @@ Repository link: github.com/Minghaoy97/Stats506_Public
 1.part1
 2.
 3.
+## Week 4
+Repository link: github.com/Minghaoy97/Stats506_Public
