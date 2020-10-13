@@ -1,0 +1,62 @@
+---
+title: "Week6_activity"
+author: "Minghao Yang"
+date: "2020/10/13"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Part 1-Data Prep
+
+### STEP1
+
+```{r dataload}
+demo = read.table(file = "./nhanes_demo.csv", sep = ',', header = T)
+ohxden = read.table(file = "./nhanes_ohxden.csv", sep = ',', header = T)
+```
+
+### STEP2
+
+```{r pressure, echo=FALSE}
+library(dplyr)
+data_all= ohxden %>%
+  select(SEQN,OHDDESTS)%>%
+  left_join(demo, by = 'SEQN')
+```
+
+### STEP3
+
+```{r}
+data_use = data_all %>%
+  transmute(
+    id = SEQN,
+    gender = RIAGENDR,
+    age = RIDAGEYR,
+    under_20 = as.numeric(RIDAGEYR < 20),
+    college = DMDEDUC2,
+    exam_status = RIDSTATR,
+    ohx_status = OHDDESTS
+  )
+```
+
+
+### STEP4
+
+```{r}
+data_use = data_use %>%
+  mutate(
+    OHX = ifelse(is.na(exam_status)|is.na(ohx_status),"incomplete",
+                 ifelse((exam_status == 2)&(ohx_status == 1),"complete","incomplete"))
+  )
+```
+
+### STEP5
+
+```{r}
+data_use = data_use %>%
+  filter(exam_status == 2)
+
+```
